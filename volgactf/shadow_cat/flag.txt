@@ -1,0 +1,1 @@
+VolgaCTF{pass_hash_cracking_hashcat_always_lurks_in_the_shadows}
