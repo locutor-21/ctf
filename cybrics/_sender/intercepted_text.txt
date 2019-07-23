@@ -1,0 +1,41 @@
+220 ugm.cybrics.net ESMTP Postfix (Ubuntu)
+EHLO localhost
+250-ugm.cybrics.net
+250-PIPELINING
+250-SIZE 10240000
+250-VRFY
+250-ETRN
+250-AUTH PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250 DSN
+AUTH LOGIN
+334 VXNlcm5hbWU6
+ZmF3a2Vz
+fawkes
+334 UGFzc3dvcmQ6
+Q29tYmluNHQxb25YWFk=
+Combin4t1onXXY
+235 2.7.0 Authentication successful
+MAIL FROM: <fawkes@ugm.cybrics.net>
+250 2.1.0 Ok
+RCPT TO: <area51@af.mil>
+250 2.1.5 Ok
+DATA
+354 End data with <CR><LF>.<CR><LF>
+From: fawkes <fawkes@ugm.cybrics.net>
+To: Area51 <area51@af.mil>
+Subject: add - archive pw
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+btw.
+
+password for the arc= hive with flag: crack0West= on88vertebra
+
+cheers!
+.
+250 2.0.0 Ok: queued as C4D593E8B6
+QUIT
+221 2.0.0 Bye
