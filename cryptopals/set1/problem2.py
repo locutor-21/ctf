@@ -7,4 +7,4 @@ xord_bytes = b''
 for b1, b2 in zip(str1, str2):
 	xord_bytes += (bytes([b1 ^ b2]))
 
-print (xord_bytes.hex())
+assert xord_bytes.hex() == '746865206b696420646f6e277420706c6179'
