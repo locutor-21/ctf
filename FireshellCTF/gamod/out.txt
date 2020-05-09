@@ -1,0 +1,48 @@
+locutor@kali:~/Documents/fireshell/gamod$ nc 142.93.113.55 31086
+
+                    +++     Fireshell CTF - GAMOD     +++
+
+[+] This is a MODified version of Guess the Number game. 
+
+[+] In this game the computer chooses a number X and you will have N chances to 
+    discover the number.
+
+[+] In each chance you will be able to ask a question (query) or answer the 
+    correct number (only once). To ask a question you need to use 'q A B' where 
+    A and B are two integers and the computer will return:
+		             
+    1 if (A MOD X)  >=  (B MOD X)
+    0 if (A MOD X)  <   (B MOD X)
+
+[+] To answer the correct number uses 'a V' where V is the answer.
+							     
+[+] Type 'start' to start: start
+    Let's go...
+[+] Round 1 \ 10 - Number between [2, 100] with 20 chances.
+[+] Move 1: q 2 4
+[+] Query Answer - 0
+[+] Move 2: q 4 8
+[+] Query Answer - 0
+[+] Move 3: q 8 16
+[+] Query Answer - 0
+[+] Move 4: q 16 32
+[+] Query Answer - 0
+[+] Move 5: q 32 64
+[+] Query Answer - 0
+[+] Move 6: q 64 100
+[+] Query Answer - 1
+[+] Move 7: q 64 80
+[+] Query Answer - 1
+[+] Move 8: q 64 72
+[+] Query Answer - 0
+[+] Move 9: q 72 76
+[+] Query Answer - 1
+[+] Move 10: q 72 74
+[+] Query Answer - 0
+[+] Move 11: q 74 75
+[+] Query Answer - 1
+[+] Move 12: a 75
+[+] Correct!
+[+] Round 2 \ 10 - Number between [2, 100] with 20 chances.
+[+] Move 1: 
+

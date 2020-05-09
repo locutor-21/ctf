@@ -1,0 +1,13 @@
+          Suggested Profile(s) : Win10x64_17134, Win10x64_14393, Win10x64_10586, Win10x64_16299, Win2016x64_14393, Win10x64_15063 (Instantiated with Win10x64_15063)
+                     AS Layer1 : SkipDuplicatesAMD64PagedMemory (Kernel AS)
+                     AS Layer2 : FileAddressSpace (/home/locutor/ITA_Sec/ctf/tghack/memeories/host.vmem)
+                      PAE type : No PAE
+                           DTB : 0x1ad002L
+                          KDBG : 0xf801fc245520L
+          Number of Processors : 2
+     Image Type (Service Pack) : 0
+                KPCR for CPU 0 : 0xfffff801fb298000L
+                KPCR for CPU 1 : 0xffffdf81bee20000L
+             KUSER_SHARED_DATA : 0xfffff78000000000L
+           Image date and time : 2019-10-20 21:21:38 UTC+0000
+     Image local date and time : 2019-10-20 14:21:38 -0700
